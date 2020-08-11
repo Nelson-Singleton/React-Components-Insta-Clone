@@ -7,7 +7,7 @@
 // Import the state hook
 import React, { useState } from 'react';
 // Import the Posts (plural!) and SearchBar components, since they are used inside App component
-import Posts from './components/Posts/Posts';
+import Posts from './components/Posts/Posts.js';
 import SearchBar from './components/SearchBar/SearchBar';
 // Import the dummyData
 import './App.css';
@@ -21,7 +21,11 @@ const App = () => {
   // To make the search bar work (which is stretch) we'd need another state to hold the search term.
 
   const likePost = postId => {
-    setPosts(posts.map)
+    setPosts(posts.map(cb =>{
+      if (postId ===cb.id){
+        return {...cb}
+      } else return posts
+    }))
     
     
     
@@ -40,7 +44,7 @@ const App = () => {
 
   return (
     <div className='App'>
-      {/* Add SearchBar and Posts here to render them */}
+      <Posts posts = {posts/* Add SearchBar and Posts here to render them */} />
       {/* Check the implementation of each component, to see what props they require, if any! */}
     </div>
   );
