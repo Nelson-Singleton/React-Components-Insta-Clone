@@ -26,8 +26,8 @@ const App = () => {
   const likePost = postId => {
     setPosts(posts.map(cb =>{
       if (postId === cb.id){
-        return {...posts}
-      } else return posts
+        return {...cb, likes : cb.likes + 1}
+      } return cb
     }))    
     /*
       This function serves the purpose of increasing the number of likes by one, of the post with a given id.
@@ -45,7 +45,10 @@ const App = () => {
   return (
     <div className='App'>
       <SearchBar SearchBar = {SearchBar} />     
-      <Posts posts = {posts/* Add SearchBar and Posts here to render them */} />      
+      <Posts posts = {posts/* Add SearchBar and Posts here to render them */} likePost = {likePost} />
+      
+      
+      
       
       
       {/* Check the implementation of each component, to see what props they require, if any! */}
