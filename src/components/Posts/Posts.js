@@ -16,7 +16,7 @@ const Posts = (props) => {
       }
       
       {/* Check the implementation of Post to see what props it requires! */}
-      {/* <Post post = {post} /> */}
+      
     </div>
   );
 };
